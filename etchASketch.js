@@ -1,17 +1,35 @@
-const container = document.querySelector('#container');
+const container = document.querySelector('#grid');
+const button = document.getElementById('btn');
 
-//container.textContent = 'test';
-
-let createGrid = (cols, rows) => {
-//    container.style.setProperty('grid-template-columns', `repeat(${cols}, 1fr)`);
-container.style.setProperty('--grid-cols', cols);
-container.style.setProperty('--grid-rows', rows);
-for (let i = 0; i < (rows * cols); i++) {
+let createGrid = (area) => {
+    clearChildren(grid);
+    container.style.setProperty('--grid-cols', area);
+    container.style.setProperty('--grid-rows', area);
+    for (let i = 0; i < (area ** 2); i++) {
         let cell = document.createElement('div');
         cell.classList.add('cell')
         //cell.textContent = 'cell';
         container.appendChild(cell);
+        
+        cell.addEventListener('mouseenter', () => {
+            cell.style.backgroundColor = 'purple';
+        });
     }
 }
 
-createGrid(16,16)
+let gridParameters = (area) => {
+    area = parseInt(prompt('Grid Size (Max 100)', 16));
+    if (area > 100 || area < 0) {
+        null;
+    } else {
+        createGrid(area)
+    } }
+
+let clearChildren = (parent) => {
+    while(parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+button.addEventListener('click', () => gridParameters());
+    

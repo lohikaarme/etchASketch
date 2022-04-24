@@ -1,4 +1,17 @@
-#container {
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.navBar {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+#grid {
     display: grid;
     box-sizing: border-box;
     height: max-content;
