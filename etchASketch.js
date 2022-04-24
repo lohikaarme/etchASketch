@@ -9,9 +9,9 @@ container.style.setProperty('--grid-rows', rows);
 for (let i = 0; i < (rows * cols); i++) {
         let cell = document.createElement('div');
         cell.classList.add('cell')
-        cell.textContent = 'cell';
+        //cell.textContent = 'cell';
         container.appendChild(cell);
     }
 }
 
-createGrid(10,5)
+createGrid(16,16)

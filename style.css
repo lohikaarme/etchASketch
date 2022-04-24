@@ -1,5 +1,18 @@
 #container {
     display: grid;
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    box-sizing: border-box;
+    height: max-content;
+    width: max-content;
+    grid-template-columns: repeat(var(--grid-cols), max-content);
+    grid-template-rows: repeat(var(--grid-rows), max-content);
+    border: 2px solid gray;
+    border-radius: 3px;
+    padding: 2px;
+}
+.cell {
+    border: 1px solid gray;
+    width: 1em;
+    height: 1em;
+    border-radius: 3px;
+    margin: 1px;
 }
