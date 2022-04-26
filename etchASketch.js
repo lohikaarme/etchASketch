@@ -1,5 +1,8 @@
 const container = document.querySelector('#grid');
 const button = document.getElementById('btn');
+//const color = document.getElementById('colorPick');
+
+let draw = false;
 
 let createGrid = (area) => {
     clearChildren(grid);
@@ -11,11 +14,16 @@ let createGrid = (area) => {
         //cell.textContent = 'cell';
         container.appendChild(cell);
         
-        cell.addEventListener('mouseenter', () => {
-            cell.style.backgroundColor = 'purple';
+        cell.addEventListener('mouseover', () => {
+            if (!draw) return;
+            cell.style.backgroundColor = 'purple';//color;
         });
     }
 }
+
+window.addEventListener('mousedown', () => draw = true)
+window.addEventListener('mouseup', () => draw = false)
+
 
 let gridParameters = (area) => {
     area = parseInt(prompt('Grid Size (Max 100)', 16));

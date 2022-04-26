@@ -4,10 +4,17 @@
     align-items: center;
 }
 
+.hero{
+    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+}
+
 .navBar {
     display: flex;
     width: 50%;
     justify-content: space-evenly;
+    align-items: center;
     padding: 1em;
 }
 
@@ -28,4 +35,8 @@
     height: 1em;
     border-radius: 3px;
     margin: 1px;
+}
+
+button {
+    height: 2em;
 }
