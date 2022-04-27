@@ -1,13 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
 .container {
     display: flex;
     flex-flow: column;
     align-items: center;
-}
-
-.hero{
-    font-weight: bold;
-    font-size: large;
-    padding: 10px;
 }
 
 .navBar {
@@ -20,11 +23,10 @@
 
 #grid {
     display: grid;
-    box-sizing: border-box;
     height: max-content;
     width: max-content;
-    grid-template-columns: repeat(var(--grid-cols), max-content);
-    grid-template-rows: repeat(var(--grid-rows), max-content);
+    grid-template-columns: repeat(var(--grid-area), max-content);
+    grid-template-rows: repeat(var(--grid-area), max-content);
     border: 2px solid gray;
     border-radius: 3px;
     padding: 2px;
